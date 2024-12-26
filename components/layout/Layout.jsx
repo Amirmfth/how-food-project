@@ -13,13 +13,16 @@ function Layout({ children }) {
           <Link href={"/categories"}>Categories</Link>
         </div>
       </header>
-      <div className={styles.container}>
-        
-      {children}
-      </div>
+      <div className={styles.container}>{children}</div>
       <footer className={styles.footer}>
-        <a href="https://amir-m-fatahi.vercel.app" target="_blank">Amirmfth </a>
-         | HowFood Website &copy;
+        <a
+          href="https://amir-m-fatahi.vercel.app"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Amirmfth{" "}
+        </a>
+        | HowFood Website &copy;
       </footer>
     </>
   );

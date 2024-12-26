@@ -1,7 +1,7 @@
 import React from "react";
 import CategoriesPage from "../../components/templates/CategoriesPage";
 
-function Categories({data}) {
+function Categories({ data }) {
   return <CategoriesPage data={data} />;
 }
 
@@ -11,7 +11,7 @@ export async function getServerSideProps(context) {
   const {
     query: { difficulty, time },
   } = context;
-  const res = await fetch(`http://localhost:4000/data`);
+  const res = await fetch(`${process.env.BASE_URL}/data`);
   const data = await res.json();
   const filteredData = data.filter((item) => {
     const difficultyResult = item.details.filter(
@@ -38,6 +38,6 @@ export async function getServerSideProps(context) {
   });
 
   return {
-    props: { filteredData },
+    props: { data: filteredData },
   };
 }
